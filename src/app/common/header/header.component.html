@@ -1,0 +1,62 @@
+<!-- Sidebar -->
+<p-sidebar [(visible)]="menu" [showCloseIcon]="false">
+  <div class="grid gap-10">
+    <label class="font-fredoka text-indigo-500 text-3xl uppercase">Coldman</label>
+
+    <ul class="text-2xl text-gray-400 font-bold grid gap-4">
+      <li class="hover:text-indigo-500 duration-300 cursor-pointer" [routerLink]="'/home/employes'" (click)="menu = !menu" [routerLinkActive]="'active'">
+        <a>Employes</a>
+      </li>
+    </ul>
+  </div>
+
+  <footer class="absolute bottom-5">
+    <button *ngIf="!logoutConfirm" class="flex gap-3 p-2 rounded bg-white text-red-500 hover:bg-red-500 hover:text-white duration-300" (click)="logoutConfirmation()">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+      </svg>
+      Se déconnecter
+    </button>
+
+    <button *ngIf="logoutConfirm" class="p-2 border rounded bg-white text-red-500 hover:bg-red-500 hover:text-white duration-300 flex gap-2" (click)="logout()">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+      </svg>
+      Etes-vous sûr ?
+    </button>
+  </footer>
+
+</p-sidebar>
+
+
+<!-- Menu -->
+<div class="h-full px-10 xl:px-20 flex items-center gap-5 xl:gap-0 xl:justify-between transition">
+  <button class="xl:hidden transition duration-300 p-3 rounded-full text-indigo-500 hover:bg-indigo-500 hover:text-white" (click)="menu = !menu">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg>
+  </button>
+
+  <label class="font-fredoka text-indigo-500 text-3xl uppercase">Coldman</label>
+
+  <ul class="text-2xl text-gray-400 font-bold hidden xl:flex gap-10">
+    <li class="hover:text-indigo-500 duration-300 cursor-pointer" [routerLink]="'/home/employes'" [routerLinkActive]="'active'">
+      <a>Employes</a>
+    </li>
+  </ul>
+
+  <div class="hidden xl:flex gap-5 text-indigo-500">
+    <button *ngIf="!logoutConfirm" class="p-2 border rounded bg-white text-red-500 hover:bg-red-500 hover:text-white duration-300" (click)="logoutConfirmation()">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+      </svg>
+    </button>
+
+    <button *ngIf="logoutConfirm" class="p-2 border rounded bg-white text-red-500 hover:bg-red-500 hover:text-white duration-300 flex gap-2" (click)="logout()">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+      </svg>
+      Etes-vous sûr ?
+    </button>
+  </div>
+</div>
